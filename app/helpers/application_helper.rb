@@ -3,8 +3,8 @@ module ApplicationHelper
     klass = case key
             when 'notice' then 'success'
             when 'alert' then 'danger'
-            else ''
+            else nil
             end
-    "alert-#{klass}"
+    klass.present? ? "alert-#{klass}" : ''
   end
 end
