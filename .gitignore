@@ -21,3 +21,5 @@
 .DS_STORE
 config/database.yml
 public/uploads
+
+coverage

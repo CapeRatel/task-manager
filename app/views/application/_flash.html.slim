@@ -1,0 +1,7 @@
+- if flash.any?
+  - flash.each do |k, v|
+    .alert.alert-dismissible[role="alert" class="#{flash_message_class(k)}"]
+      button.close[type="button" data-dismiss="alert" aria-label="Close"]
+        span[aria-hidden="true"]
+          | ×
+      = v

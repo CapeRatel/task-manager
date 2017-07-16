@@ -5,11 +5,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'bootstrap-sass'
+
 gem 'coffee-rails', '~> 4.2'
 
 gem 'faker'
 
 gem 'jbuilder', '~> 2.5'
+gem 'jquery-rails'
 
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
@@ -51,5 +54,6 @@ group :test do
 
   gem 'rspec-rails'
 
+  gem 'simplecov'
   gem 'shoulda-matchers'
 end
