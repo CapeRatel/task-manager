@@ -4,6 +4,6 @@ module WardenHelper
   end
 
   def warden
-    env['warden']
+    request.env['warden']
   end
 end

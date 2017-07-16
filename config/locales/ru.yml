@@ -1,3 +1,7 @@
 ru:
   brand: "Task Manager"
   invalid_email_or_password: "Неверный email или пароль"
+  have_been_logged_out: "Вы успешно разлогинились"
+  logout: "Выйти"
+  sign_in: "Войти"
+  signed_in: "Добро пожаловать. Вы вошли."

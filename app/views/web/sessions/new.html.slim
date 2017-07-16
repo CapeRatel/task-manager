@@ -1,0 +1,7 @@
+.panel.panel-default
+  .panel-heading= t('sign_in')
+  .panel-body
+    = simple_form_for '', method: :post, url: sessions_path, html: { id: 'sign_in_form' } do |f|
+      = f.input :email
+      = f.input :password
+      = f.button :submit, t('sign_in')

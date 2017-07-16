@@ -25,6 +25,7 @@ gem 'rails', '~> 5.1.2'
 gem 'rails-i18n'
 
 gem 'sass-rails', '~> 5.0'
+gem 'simple_form'
 gem 'slim-rails'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
