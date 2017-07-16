@@ -5,17 +5,21 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'bcrypt'
 gem 'bootstrap-sass'
 
 gem 'coffee-rails', '~> 4.2'
 
 gem 'faker'
 
+gem 'email_validator'
+
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
+gem 'pundit'
 
 gem 'rails', '~> 5.1.2'
 gem 'rails-i18n'
@@ -23,9 +27,11 @@ gem 'rails-i18n'
 gem 'sass-rails', '~> 5.0'
 gem 'slim-rails'
 
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
 gem 'uglifier', '>= 1.3.0'
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'warden'
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
