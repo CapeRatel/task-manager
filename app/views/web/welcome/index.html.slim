@@ -1,2 +1,14 @@
-h1 Web::Welcome#index
-p Find me in app/views/web/welcome/index.html.slim
+h2.text-center= t('all_tasks_on_site')
+
+table.table.table-striped.table-bordered
+  tr
+    th= Task.human_attribute_name(:id)
+    th= Task.human_attribute_name(:name)
+    th= Task.human_attribute_name(:user)
+    th= Task.human_attribute_name(:created_at)
+  - @tasks.each do |task|
+    tr
+      td= task.id
+      td= task.name
+      td= task.user.email
+      td= l(task.created_at, format: :short)

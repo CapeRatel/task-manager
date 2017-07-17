@@ -1,0 +1,7 @@
+.panel.panel-default
+  .panel-heading= t('add_task')
+  .panel-body
+    - if policy([:admin, :task]).index?
+      => link_to t('back'), admin_root_path, class: 'btn btn-default btn-sm'
+  .panel-body
+    = render 'form'

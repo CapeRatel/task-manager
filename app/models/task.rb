@@ -1,6 +1,8 @@
 class Task < ApplicationRecord
   include AASM
 
+  scope :newest, -> { order(created_at: :desc) }
+
   belongs_to :user
 
   validates :name, presence: true

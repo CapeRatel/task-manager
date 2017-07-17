@@ -1,7 +1,26 @@
-.panel.panel-default
-  .panel-heading= t('sign_in')
-  .panel-body
-    = simple_form_for '', method: :post, url: sessions_path, html: { id: 'sign_in_form' } do |f|
-      = f.input :email
-      = f.input :password
-      = f.button :submit, t('sign_in')
+.row
+  .col-sm-4
+    .panel.panel-default
+      .panel-heading= t('sign_in')
+      .panel-body
+        = simple_form_for '', method: :post, url: sessions_path, html: { id: 'sign_in_form' } do |f|
+          = f.input :email
+          = f.input :password
+          = f.button :submit, t('sign_in')
+  .col-sm-8
+    .panel.panel-default
+      table.table.table-bordered
+        thead
+          tr
+            th #
+            th Admin
+            th User
+        tbody
+          tr
+            td Email
+            td admin@task-manager.ru
+            td user@task-manager.ru
+          tr
+            td Пароль
+            td qwerty123
+            td qwerty123

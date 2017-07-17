@@ -7,7 +7,8 @@ class Web::SessionsController < ::Web::BaseController
 
   def create
     warden.authenticate!
-    redirect_to user_root_path, notice: t('signed_in')
+    flash[:notice] = t('signed_in')
+    redirect_to(current_user.admin? ? admin_root_path : user_root_path)
   end
 
   def destroy

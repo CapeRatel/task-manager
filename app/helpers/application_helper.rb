@@ -1,6 +1,8 @@
 module ApplicationHelper
   def attachment_preview(attach)
-    if %w(jpg png jpeg).include?(attach.file.extension)
+    if attach.blank?
+      ''
+    elsif %w(jpg png jpeg).include?(attach.file.extension)
       image_tag(attach, class: 'img-responsive')
     else
       link_to attach.file.filename, attach.url

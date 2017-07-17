@@ -1,0 +1,9 @@
+.panel.panel-default
+  .panel-heading= t('edit_task')
+  .panel-body
+    - if policy([:admin, :task]).index?
+      => link_to t('back'), admin_root_path, class: 'btn btn-default btn-sm'
+    - if policy([:admin, @task]).destroy?
+      => link_to t('destroy'), admin_task_path(@task), method: :delete, class: 'btn btn-danger btn-sm'
+  .panel-body
+    = render 'form'

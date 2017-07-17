@@ -16,7 +16,7 @@
         td= task.id
         td= link_to task.name, user_task_path(task)
         td= task.description
-        td= task.state
+        td= t("state.#{task.state}")
         td= l(task.created_at, format: :short)
         td
           - if policy([:user, task]).edit?

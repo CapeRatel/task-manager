@@ -8,8 +8,12 @@ ru:
         id: "ID"
         name: "Название"
         state: "Состояние"
+        user: "Пользователь"
+        user_id: "Пользователь"
 
   add_task: "Добавить задачу"
+  admin_panel: "Административная панель"
+  all_tasks_on_site: "Все задачи на сайте"
   back: "Назад"
   brand: "Task Manager"
   cabinet: "Кабинет"
@@ -22,6 +26,10 @@ ru:
   save: "Сохранить"
   sign_in: "Войти"
   signed_in: "Добро пожаловать. Вы вошли."
+  state:
+    new: "Новое"
+    started: "Начато"
+    finished: "Законченное"
   task_created: "Задача добавлена"
   task_updated: "Задача обновлена"
   task_destroyed: "Задача удалена"

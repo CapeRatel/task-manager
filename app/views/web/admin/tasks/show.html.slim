@@ -1,12 +1,12 @@
 .panel.panel-default
   .panel-heading= @task.name
   .panel-body
-    - if policy([:user, :task]).index?
-      => link_to t('back'), user_root_path, class: 'btn btn-default btn-sm'
-    - if policy([:user, @task]).edit?
-      => link_to t('edit'), edit_user_task_path(@task), class: 'btn btn-warning btn-sm'
-    - if policy([:user, @task]).destroy?
-      => link_to t('destroy'), user_task_path(@task), method: :delete, class: 'btn btn-danger btn-sm'
+    - if policy([:admin, :task]).index?
+      => link_to t('back'), admin_root_path, class: 'btn btn-default btn-sm'
+    - if policy([:admin, @task]).edit?
+      => link_to t('edit'), edit_admin_task_path(@task), class: 'btn btn-warning btn-sm'
+    - if policy([:admin, @task]).destroy?
+      => link_to t('destroy'), admin_task_path(@task), method: :delete, class: 'btn btn-danger btn-sm'
   table.table.table-bordered.table-striped
     tr
       td= Task.human_attribute_name(:id)
@@ -20,6 +20,9 @@
     tr
       td= Task.human_attribute_name(:state)
       td= t("state.#{@task.state}")
+    tr
+      td= Task.human_attribute_name(:user)
+      td= @task.user.email
     tr
       td= Task.human_attribute_name(:attachment)
       td= attachment_preview(@task.attachment)

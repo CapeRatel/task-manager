@@ -10,9 +10,15 @@ nav.navbar.navbar-default
       = link_to t('brand'), root_path, class: 'navbar-brand'
     #main-menu.collapse.navbar-collapse
       ul.nav.navbar-nav
+        - if policy([:admin, :task]).index?
+          li= link_to t('admin_panel'), admin_root_path
         - if policy([:user, :task]).index?
           li= link_to t('cabinet'), user_root_path
+
       ul.nav.navbar-nav.navbar-right
+        - if current_user&.admin?
+          li.navbar-text
+            span.label.label-info Вы администратор
         - if policy(:session).new?
           li= link_to t('sign_in'), new_session_path
         - if policy(:session).destroy?
