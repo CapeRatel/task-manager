@@ -1,0 +1,27 @@
+.panel.panel-default
+  .panel-heading= @task.name
+  .panel-body
+    - if policy([:user, @task]).edit?
+      => link_to t('edit'), edit_user_task_path(@task), class: 'btn btn-warning btn-sm'
+    - if policy([:user, @task]).destroy?
+      => link_to t('destroy'), user_task_path(@task), method: :delete, class: 'btn btn-danger btn-sm'
+  table.table.table-bordered.table-striped
+    tr
+      td= Task.human_attribute_name(:id)
+      td= @task.id
+    tr
+      td= Task.human_attribute_name(:name)
+      td= @task.name
+    tr
+      td= Task.human_attribute_name(:description)
+      td= @task.description
+    tr
+      td= Task.human_attribute_name(:state)
+      td= @task.state
+    tr
+      td= Task.human_attribute_name(:attachment)
+      td= attachment_preview(@task.attachment)
+    tr
+      td= Task.human_attribute_name(:created_at)
+      td= l(@task.created_at, format: :long)
+

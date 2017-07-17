@@ -1,0 +1,8 @@
+= simple_form_for [:user, @task] do |f|
+  = f.input :name
+  = f.input :description
+
+  = attachment_preview(@task.attachment) if @task.attachment.present?
+  = f.input :attachment
+  = f.hidden_field :attachment_cache
+  = f.button :submit, t('save'), class: 'btn btn-primary btn-sm'

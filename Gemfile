@@ -5,9 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'aasm'
+
 gem 'bcrypt'
 gem 'bootstrap-sass'
 
+gem 'carrierwave'
 gem 'coffee-rails', '~> 4.2'
 
 gem 'faker'
@@ -46,6 +49,7 @@ end
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
+  gem 'pry-byebug'
   gem 'pry-rails'
 end
 

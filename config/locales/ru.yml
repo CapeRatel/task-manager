@@ -1,7 +1,28 @@
 ru:
+  activerecord:
+    attributes:
+      task:
+        attachment: "Файл"
+        created_at: "Время создания"
+        description: "Описание"
+        id: "ID"
+        name: "Название"
+        state: "Состояние"
+
+  add_task: "Добавить задачу"
+  back: "Назад"
   brand: "Task Manager"
+  cabinet: "Кабинет"
+  destroy: "Удалить"
+  edit: "Редактировать"
+  edit_task: "Редактировать задачу"
   invalid_email_or_password: "Неверный email или пароль"
   have_been_logged_out: "Вы успешно разлогинились"
   logout: "Выйти"
+  save: "Сохранить"
   sign_in: "Войти"
   signed_in: "Добро пожаловать. Вы вошли."
+  task_created: "Задача добавлена"
+  task_updated: "Задача обновлена"
+  task_destroyed: "Задача удалена"
+  tasks: "Задачи"
