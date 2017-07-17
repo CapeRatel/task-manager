@@ -1,4 +1,6 @@
 class Web::User::TasksController < ::Web::User::BaseController
+  include TaskStateable
+
   before_action -> { authorize [:user, :task] }, only: [:index, :new, :create]
   before_action :load_and_authorize_task, only: [:show, :edit, :update, :destroy]
 

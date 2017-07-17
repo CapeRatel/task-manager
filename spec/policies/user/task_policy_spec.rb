@@ -16,7 +16,7 @@ describe User::TaskPolicy do
     end
   end
 
-  permissions :show?, :edit?, :update?, :destroy? do
+  permissions :show?, :edit?, :update?, :destroy?, :change_state? do
     it 'user can edit and remove own task' do
       expect(subject).to permit(user, [:user, task])
     end

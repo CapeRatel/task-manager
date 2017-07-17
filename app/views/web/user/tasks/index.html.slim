@@ -9,6 +9,7 @@
       th= Task.human_attribute_name(:name)
       th= Task.human_attribute_name(:description)
       th= Task.human_attribute_name(:state)
+      th= t('change_state')
       th= Task.human_attribute_name(:created_at)
       th
     - @tasks.each do |task|
@@ -17,6 +18,10 @@
         td= link_to task.name, user_task_path(task)
         td= task.description
         td= t("state.#{task.state}")
+        td
+          - if policy([:user, task]).change_state?
+            - task.aasm.events(permitted: true).map(&:name).each do |event|
+              => link_to t("event.#{event}"), change_state_user_task_path(task, event: event), method: :patch, class: 'btn btn-default btn-sm'
         td= l(task.created_at, format: :short)
         td
           - if policy([:user, task]).edit?

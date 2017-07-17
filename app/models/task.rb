@@ -12,18 +12,15 @@ class Task < ApplicationRecord
     state :started, :finished
 
     event :start do
-      transitions from: :new, to: :started
-      transitions from: :finished, to: :started
+      transitions from: [:new, :finished], to: :started
     end
 
     event :finish do
-      transitions from: :new, to: :finished
-      transitions from: :started, to: :finished
+      transitions from: [:new, :started], to: :finished
     end
 
     event :begin do
-      transitions from: :started, to: :new
-      transitions from: :finished, to: :new
+      transitions from: [:started, :finished], to: :new
     end
   end
 

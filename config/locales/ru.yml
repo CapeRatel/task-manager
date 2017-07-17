@@ -17,9 +17,14 @@ ru:
   back: "Назад"
   brand: "Task Manager"
   cabinet: "Кабинет"
+  change_state: "Изменить состояние"
   destroy: "Удалить"
   edit: "Редактировать"
   edit_task: "Редактировать задачу"
+  event:
+    begin: "Новое"
+    finish: "Закончить"
+    start: "Начать"
   invalid_email_or_password: "Неверный email или пароль"
   have_been_logged_out: "Вы успешно разлогинились"
   logout: "Выйти"
@@ -29,7 +34,7 @@ ru:
   state:
     new: "Новое"
     started: "Начато"
-    finished: "Законченное"
+    finished: "Закончено"
   task_created: "Задача добавлена"
   task_updated: "Задача обновлена"
   task_destroyed: "Задача удалена"

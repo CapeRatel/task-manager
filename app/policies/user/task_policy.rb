@@ -10,4 +10,8 @@ class User::TaskPolicy < ::User::BasePolicy
   def create?
     new?
   end
+
+  def change_state?
+    edit?
+  end
 end

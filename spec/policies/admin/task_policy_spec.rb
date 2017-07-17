@@ -7,7 +7,7 @@ describe Admin::TaskPolicy do
 
   subject { Admin::TaskPolicy }
 
-  permissions :index?, :new?, :create?, :edit?, :update?, :destroy? do
+  permissions :index?, :new?, :create?, :edit?, :update?, :destroy?, :change_state? do
     it 'admin can see all tasks' do
       expect(subject).to permit(admin, [:user, :task])
       expect(subject).to_not permit(nil, [:user, :task])

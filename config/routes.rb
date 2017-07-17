@@ -4,13 +4,17 @@ Rails.application.routes.draw do
     delete :logout, to: 'sessions#destroy'
 
     namespace :admin do
-      resources :tasks, except: :index
+      resources :tasks, except: :index do
+        patch :change_state, on: :member
+      end
 
       root to: 'tasks#index'
     end
 
     namespace :user, path: 'cabinet' do
-      resources :tasks, except: :index
+      resources :tasks, except: :index do
+        patch :change_state, on: :member
+      end
 
       root to: 'tasks#index'
     end
