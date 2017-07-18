@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'coffee-rails', '~> 4.2'
 
+gem 'factory_girl_rails'
 gem 'faker'
 
 gem 'email_validator'
@@ -59,7 +60,6 @@ group :test do
 
   gem 'database_cleaner'
 
-  gem 'factory_girl_rails'
   gem 'fuubar'
 
   gem 'poltergeist'
