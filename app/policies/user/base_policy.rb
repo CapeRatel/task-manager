@@ -7,7 +7,7 @@ class User::BasePolicy
   end
 
   def index?
-    user.present?
+    user.present? && user.user?
   end
 
   def show?
@@ -15,7 +15,7 @@ class User::BasePolicy
   end
 
   def new?
-    user.present?
+    index?
   end
 
   def create?
@@ -23,7 +23,7 @@ class User::BasePolicy
   end
 
   def edit?
-    user.present? && user.id == record.user_id
+    show?
   end
 
   def update?

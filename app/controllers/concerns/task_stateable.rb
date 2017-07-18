@@ -9,7 +9,6 @@ module TaskStateable
       when :start then @task.start!
       when :finish then @task.finish!
       when :begin then @task.begin!
-      else nil
       end
     end
     redirect_back(fallback_location: root_path)
